@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- action을 지정하지 않으면 자기 문서를 또 부른다 -->
+    <!-- 아이디, 패스워드를 입력하고 submit했을 때 주소창 확인 -> ?name속성=값속성&name속성2=값속성 ?userid=test&password=1234 -->
+    <!-- 아래 input태그에서 name 속성이 아닌 id 속성을 쓰면 아무 의미 없음 -->
+    <!-- form 태그 내부에서 입력되는 모든 내용은 submit하면 한번에 전송됨  -->
+    <form action="" method="get">
+        <fieldset>
+            <legend>로그인</legend>
+            <label for="userid">아이디
+                <input type="text" name="userid" size="10"></label>
+            <label for="password">패스워드
+                <input type="password" name="password" size="10"></label>
+
+            <!-- 아래 둘은 서버로 전송을 함(요즘은 input태그 보다는 button태그 사용) -->
+            <input type="submit" value="로그인">
+            <button>로그인</button>
+
+            <!-- 아래 둘은 서버로 전송하지 않고 클릭된다는 이벤트만 발생 -->
+            <input type="button" value="버튼">
+            <button type="button">버튼</button>
+        </fieldset>
+
+        <fieldset style="margin-top: 30px;">
+            <legend>배송정보</legend>
+            <ul>
+                <li><label for="username">이름
+                    <input type="text" name="username" id="username">
+                </label></li>
+                <li><label for="username">배송주소
+                    <input type="text" name="address" id="address">
+                </label></li>
+                <li><label for="username">이메일
+                    <input type="text" name="email" id="email">
+                </label></li>
+                <li><label for="username">연락처
+                    <input type="text" name="phonenumber" id="phonenumber">
+                </label></li>
+            </ul>
+        </fieldset>
+
+        <fieldset style="margin-top: 30px;">
+            <legend>상품선택</legend>
+            <p>주문할 상품을 선택해주세요.</p>
+            <label for="check1">
+                <input type="checkbox" value="m1" name="product" checked id="check1">선물용 3kg
+            </label>
+            <label for="check2">
+                <input type="checkbox" value="m2" name="product" id="check2">선물용 6kg
+            </label>
+            <label for="check3">
+                <input type="checkbox" value="m3" name="product" id="check2">선물용 9kg
+            </label>
+            
+            <p>포장선택</p>
+            <label for="gift1">
+                <input type="radio" value="1" name="gift" checked id="gift1">선물포장
+            </label>
+            <label for="gift1">
+                <input type="radio" value="2" name="gift" checked id="gift1">포장안함
+            </label>
+        </fieldset>
+    </form>
+</body>
+</html>
