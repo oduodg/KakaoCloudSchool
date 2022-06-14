@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="header1" onclick="alert('눌림')">이 부분의 텍스트를 바꿔봅시다.</h1>
+    <h1 id="header1">이 부분의 텍스트를 바꿔봅시다.</h1>
+    <h1 id="header3">이벤트 발생</h1>
+</body>
+</html>
+<script>
+    var h1 = document.getElementsByTagName("h1");
+    h1[0].innerHTML = "자바스크립트";
+    h1[1].innerHTML = "베열처리가능";
+
+    h1 = document.querySelector("#header1");
+    console.log(h1.innerHTML);
+
+    h1 = document.getElementById("header1");
+    console.log(h1.innerHTML);
+
+    h1.style.color = "red";
+
+    var header3 = document.getElementById("header3")
+
+    // 함수 표현식, onclick 이벤트가 발생했을 때 호출할 콜백함수를 전달한다.
+    // 호출되는 순간 메모리를 차지했다가 기능을 다 하면 시스템에서 이 함수를 버림(메모리 여유생김)
+    header3.onclick = () => alert("클릭 이벤트 발생"); // 화살표 함수
+
+    var add = (x, y) => x+y;
+    console.log(add(4,5));
+
+    var arr = [1,2,3,4,5,6,7,8,9,10];
+    var evenArr=[];
+    var oddArr=[];
+    for(i=0; i<arr.length; i++){
+        if (arr[i]%2==0)
+            evenArr.push(arr[i]);
+        else
+            oddArr.push(arr[i]);
+    }
+
+    console.log(evenArr);
+    console.log(oddArr);
+    console.log(arr.filter(x=>x%2==0));
+    console.log(arr.filter(x=>x%2==1));
+    
+    arr.forEach(x=>console.log(x));
+</script>
