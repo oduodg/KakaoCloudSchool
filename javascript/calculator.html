@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    값1 : <input type="text" id="xvalue"> <br>
+    값2 : <input type="text" id="yvalue"> <br>
+
+    <button type="button" onclick="goAdd()"> + </button>
+    <button type="button" onclick="goSub()"> - </button>
+    <button type="button" onclick="goMul()"> * </button>
+    <button type="button" onclick="goDiv()"> / </button>
+
+    <br>
+    결과: <span id="result"></span>
+</body>
+</html>
+<script>
+    function goAdd(){
+        let x = parseInt(document.getElementById("xvalue").value);
+        let y = parseInt(document.getElementById("yvalue").value);
+        let result = x+y;
+        document.getElementById("result").innerHTML = "<h1>" + result + "</h1>"
+    }
+    function goSub(){
+        let x = parseInt(document.getElementById("xvalue").value);
+        let y = parseInt(document.getElementById("yvalue").value);
+        let result = x-y;
+        document.getElementById("result").innerHTML = "<h1>" + result + "</h1>"
+    }
+    function goMul(){
+        let x = parseInt(document.getElementById("xvalue").value);
+        let y = parseInt(document.getElementById("yvalue").value);
+        let result = x*y;
+        document.getElementById("result").innerHTML = "<h1>" + result + "</h1>"
+    }
+    function goDiv(){
+        let x = parseInt(document.getElementById("xvalue").value);
+        let y = parseInt(document.getElementById("yvalue").value);
+        let result = x/y;
+        document.getElementById("result").innerHTML = "<h1>" + result + "</h1>"
+    }
+</script>
