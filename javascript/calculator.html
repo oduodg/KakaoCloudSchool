@@ -10,38 +10,28 @@
     값1 : <input type="text" id="xvalue"> <br>
     값2 : <input type="text" id="yvalue"> <br>
 
-    <button type="button" onclick="goAdd()"> + </button>
-    <button type="button" onclick="goSub()"> - </button>
-    <button type="button" onclick="goMul()"> * </button>
-    <button type="button" onclick="goDiv()"> / </button>
+    <button type="button" onclick="Calculate('1')"> + </button>
+    <button type="button" onclick="Calculate('2')"> - </button>
+    <button type="button" onclick="Calculate('3')"> * </button>
+    <button type="button" onclick="Calculate('4')"> / </button>
 
     <br>
     결과: <span id="result"></span>
 </body>
 </html>
 <script>
-    function goAdd(){
+    function Calculate(op){
         let x = parseInt(document.getElementById("xvalue").value);
         let y = parseInt(document.getElementById("yvalue").value);
-        let result = x+y;
-        document.getElementById("result").innerHTML = "<h1>" + result + "</h1>"
-    }
-    function goSub(){
-        let x = parseInt(document.getElementById("xvalue").value);
-        let y = parseInt(document.getElementById("yvalue").value);
-        let result = x-y;
-        document.getElementById("result").innerHTML = "<h1>" + result + "</h1>"
-    }
-    function goMul(){
-        let x = parseInt(document.getElementById("xvalue").value);
-        let y = parseInt(document.getElementById("yvalue").value);
-        let result = x*y;
-        document.getElementById("result").innerHTML = "<h1>" + result + "</h1>"
-    }
-    function goDiv(){
-        let x = parseInt(document.getElementById("xvalue").value);
-        let y = parseInt(document.getElementById("yvalue").value);
-        let result = x/y;
+        let result;
+        if(op === '1')
+            result = x+y;
+        else if(op === '2')
+            result = x-y;
+        else if(op === '3')
+            result = x*y;
+        else if(op === '4')
+            result = x/y;
         document.getElementById("result").innerHTML = "<h1>" + result + "</h1>"
     }
 </script>
