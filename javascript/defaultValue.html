@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    // 기본 매개변수 - 매개변수에 기본값을 부여한다.
+    function myfunction(a=10, b=20, c=30){
+        return a+b+c;
+    }
+    console.log(myfunction());
+    console.log(myfunction(1));
+    console.log(myfunction(1,2));
+    console.log(myfunction(1,2,3));
+
+    // 매개변수에 기본값을 주지 않았을 경우에 값을 주지 않고 함수를 호출하면, undefined가 전달됨.
+    function showMessage(text){
+        /* if (text === undefined){
+            text = "빈 문자열"ㅣ
+        } */
+        text = text || "빈 문자열";
+        console.log(text);
+    }
+
+    showMessage(); // "빈 문자열" 출력
+    showMessage("안녕하세요"); // "안녕하세요" 출력
+
+    // 매개변수 'count'가 넘어오지 않으면 'unknown'을 출력해주는 함수
+    function showCount(count){
+        alert(count ?? "unknown");
+    }
+
+    showCount(5); // 5
+    showCount(""); // 아무것도 출력 ㅌ 
+    showCount(null); // unknown
+    showCount(); // unknown
+</script>
