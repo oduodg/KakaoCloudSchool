@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button type="button" onclick="goPress()">누르기</button>
+    <button type="button" id="btnPress">누르기2</button>
+</body>
+</html>
+<script>
+    function goPress(){
+        alert("버튼눌림");
+    }
+    
+    window.onload = function(){
+        let btnPress = document.getElementById("btnPress"); // btnPress는 id가 "btnPress"인 객체를 선택
+        btnPress.addEventListener("click", ()=>{ // click이라는 이벤트가 실행되면 아래 코드를 실행
+            alert("버튼눌림2"); 
+        })
+    }
+</script>

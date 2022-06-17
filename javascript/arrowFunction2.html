@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+</body>
+</html>
+<script>
+    let numArray = [10,20,3,5,7,-1,9,12,13,-4,6];
+    let wordArray = ["school","hospital","assembly","compile","default","constructor", "desk", "object", "class", "function", "procedure", "alt","bread","milk"];
+    let stuArray = [
+        {"class":"1", "name":"A", kor:90, eng:90, mat:90},
+        {"class":"2", "name":"B", kor:80, eng:60, mat:80},
+        {"class":"2", "name":"C", kor:70, eng:70, mat:90},
+        {"class":"1", "name":"D", kor:100, eng:90, mat:90},
+        {"class":"2", "name":"E", kor:95, eng:80, mat:100},
+        {"class":"1", "name":"F", kor:75, eng:60, mat:60}
+    ];
+
+    // 연습문제. numArray에서 짝수 찾아내기
+    console.log(numArray.filter(a => a % 2 == 0));
+    // 문제1. numArray에서 음수 찾아내기
+    console.log(numArray.filter(x => x < 0));
+    // 문제2. wordArray에서 단어 길이가 6글자 이상인 것만 추출하기
+    console.log(wordArray.filter(x => x.length >= 6))
+    // 문제3. class가 1인 학생들과 2인 학생들 분리하기
+    console.log(stuArray.filter(x => x.class === "1"))
+    console.log(stuArray.filter(x => x.class === "2"))
+
+    numArray.filter(x=>x<0)
+            .forEach((x)=>{
+                console.log(x);
+            });
+
+    wordArray.filter(x=>x.length>=6)
+            .map((x)=>x.toUpperCase()) // 요소에 연산을 수행해서 원본데이터는 냅두고
+            .forEach((x)=>{ // 연산을 수행한다.
+                console.log(x);
+            });
+    
+    let temp = numArray.map(x => x*x);
+    console.log(temp);
+    console.log(numArray); // 원본 데이터는 그대로 남아있다.
+
+    // 문제4. stuArray에 총점하고 평균 계산해서 넣기
+    stuArray.forEach((s) =>{
+        s.total = s.kor + s.eng +s.mat;
+        s.avg = parseInt(s.total/3);
+    })
+    console.log(stuArray);
+
+
+    let {name, kor, eng, total} = stuArray[0];
+    console.log(name, kor, eng, total);
+
+    numArray.sort((a, b) => {return b-a;}); // 자기 순서를 바꿈(내림차순)
+    console.log(numArray);
+
+    console.log("오름차순")
+    stuArray.sort((a, b) => a.total - b.total) // 총점 오름차순
+    console.log(stuArray);
+
+    console.log("내림차순")
+    stuArray.sort((a, b) => b.total - a.total) // 총점 내림차순
+    console.log(stuArray);
+
+    numArray.map((object, i)=>{
+        console.log(object, i);
+        return object;
+    });
+
+    let arr2D = [
+        [1,2,3,4],
+        [5,6,7,8],
+        [9,10,11,12]
+    ];
+    
+    arr2D.forEach((arr, index)=>{
+        console.log("----------");
+        arr.forEach((item, index)=>{
+            console.log(item, index);
+        });
+    });
+
+    // map함수를 사용해서 첫번째 1차원 배열에 2를 곱하고, 두번째 1차원 배열에 3을 곱하고, 세번째 1차원 배열에 4를 곱해보자.
+    let k = 2;
+    let result = arr2D.map((arr, i)=>{
+        let temp = arr.map((a)=>{
+            return a*k; // 요소를 하나씩 다 반환하고
+        });
+        k++;
+        return temp; // 배열을 반환
+    })
+
+    console.log(result);
+
+    result = numArray.find(x=> x % 2 == 0);
+    console.log(result, typeof(result));
+
+    result = numArray.filter(x=>x%2==0);
+    console.log(result, typeof(result));
+</script>

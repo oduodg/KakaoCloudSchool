@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    let add = (a, b) => a + b; // return 구문 생략
+    let sigma = (limit=10)=> {
+        if(limit<1)
+            return; // Java에서는 error발생, JavaScript는 undefined를 반환하고 끝남.
+        let i, sum = 0;
+        for(i=1; i<=limit; i++){
+            sum += i;
+        }
+        return sum;
+    }
+
+    console.log(add(10,20));
+    console.log(sigma());
+    console.log(sigma(-1));
+    console.log(sigma(100));
+</script>
