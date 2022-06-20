@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" onkeypress="inNumber()">
+    
+    <input type="text" oninput="this.value = this.value.replace(/[^0-9]/g, '')"> <br>
+    <!-- 0부터 9까지의 숫자를 제외한 모든 문자를 ''로 치횐 -->
+
+    <input type="number" name="" id="">
+</body>
+</html>
+<script>
+    // key event는 event가 발생해야 사용가능. 한글이나 복사/붙여넣기는 작동이 안된다.
+    // -> 해결하려면 .. 정규식을 사용하자
+    function inNumber(){
+        console.log(event);
+        console.log(event.keyCode);
+        // 숫자를 제외한 나머지는 출력이 안되도록(한글은 keyevent가 아예 발생하지 않음. keyCode가 적용되지 않음.)
+        if (event.keyCode < 48 || event.keyCode > 57)
+            event.returnValue=false; // 화면에 출력되는 것을 막는다.
+    }   
+
+    // 정규식 - 우편번호나 이메일 등 특정 형식을 따르는 데이터를 찾고자 할 때 사용한다.
+    //        /패턴/g - "해당 패턴을 만족하는 모든 데이터"라는 의미
+    //        /[0-9] - 0, 1, 2, 3, 4, 5, 6, 7, 8 ,9 가 올 수 있다.
+    //        /[^0-9] - 0, 1, 2, 3, 4, 5, 6, 7, 8 ,9를 제외한 모든 문자
+    //        this.value = this.value.replace(/[^0-9]/g, '')
+    //        0~9를 제외한 모든 문자를 공백으로 바꿈.
+    //        replace는 원본 데이터를 수정하지 않고 수정된 데이터를 반환한다.
+</script>
