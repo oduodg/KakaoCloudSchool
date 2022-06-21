@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <form id="myform">
+        <input type="text" name="x" id="x">
+        <input type="button" value="보내기1" id="btnSend">
+        <button id="btnPress" type="">보내기2</button>
+    </form>
+</body>
+</html>
+<script>
+    $(()=>{
+        $("#btnSend").click(function(){
+            if($("#x").val().trim().length < 5){
+                alert("5글자가 넘게 입력하세요.");
+                $("x").focus();
+                return false;
+            }
+            $("#myform").submit()
+        })
+        $("#btnPress").click(function(){
+            $("#myform").submit();
+        })
+    })
+</script>

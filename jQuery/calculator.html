@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    x : <input type="text" name="" id="xvalue" style="margin-bottom: 5px;"> <br>
+    y : <input type="text" name="" id="yvalue" style="margin-bottom: 5px;"> <br>
+
+    <button type="button" class="button" id="btnAdd">더하기</button>
+    <button type="button" class="button" id="btnSub">빼기</button>
+    <button type="button" class="button" id="btnMul">곱하기</button>
+    <button type="button" class="button" id="btnDiv">나누기</button>
+    
+    <br> 
+    <div id="result"></div>
+</body>
+</html>
+<script>
+    // 클래스로 가져오기
+    $(".button").click((button) => {
+        let x = parseInt($("#xvalue").val());
+        let y = parseInt($("#yvalue").val());
+        
+        if(button.target.id === "btnAdd")
+            $("#result").html(x + y);
+        else if (button.target.id === "btnSub")
+            $("#result").html(x - y);
+        else if (button.target.id === "btnMul")
+            $("#result").html(x * y);    
+        else
+            $("#result").html(x / y);
+    })
+
+    // id로 가져오기
+    /*
+    $(() => {
+        $("#btnAdd").click( () => {
+            let x = parseInt($("#xvalue").val());
+            let y = parseInt($("#yvalue").val());
+            $("#result").html(`<h2> 더하기: ${x + y} </h2>`);
+        })
+    });
+    */
+
+</script>
