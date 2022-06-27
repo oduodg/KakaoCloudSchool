@@ -6,5 +6,5 @@ http.createServer((req, res) => {
     res.setHeader("Content-type", "text/html"); // 보내는 정보가 html임을 알림
     res.end("<h1>Hello nodejs</h1>");
 }).listen(3000, "127.0.0.1", () => {
-    console.log("Servere start at http://127.0.0.1:3000");
+    console.log("Server start at http://127.0.0.1:3000");
 }); // 3000번 포트 열기
