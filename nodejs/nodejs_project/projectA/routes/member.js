@@ -69,14 +69,33 @@ router.post("/register", (req, res) => {
 
     var sql = `insert into member(userid, password, username, email, phone, wdate, delyn) values(?, ?, ?, ?, ?, now(),'N')`;
     var params = [userid, password, username, email, phone];
-    console.log(sql);
     common.excuteDB(sql, params)
     .then((result) => {
         res.send({result:"success"});
     })
     .catch((error) => {
-        res.send({result:"error"});
+        res.send({result:"fail"});
     })
 });
 
+router.post("/check", (req, res) => {
+    console.log('*************');
+    let userid = req.body.userid;
+    let sql = `select count(*) cnt from member where userid='${userid}'`;
+    console.log(sql);
+    common.excuteDB(sql)
+    .then((result) => {
+        console.log(result);
+
+        if(result[0]["cnt"] == 0){
+            res.send({"result": "success"});
+        }
+        else{
+            res.send({"result":"fail"});
+        }
+    })
+    .catch((error) =>{
+        console.log(error);
+    });
+});
 module.exports = router;
