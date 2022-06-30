@@ -79,14 +79,10 @@ router.post("/register", (req, res) => {
 });
 
 router.post("/check", (req, res) => {
-    console.log('*************');
     let userid = req.body.userid;
     let sql = `select count(*) cnt from member where userid='${userid}'`;
-    console.log(sql);
     common.excuteDB(sql)
     .then((result) => {
-        console.log(result);
-
         if(result[0]["cnt"] == 0){
             res.send({"result": "success"});
         }
