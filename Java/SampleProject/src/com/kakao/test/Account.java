@@ -35,7 +35,7 @@ public class Account {
 		this.balance = balance;
 	}
 
-	public void AccoutInfo() {
+	public void AccountInfo() {
 		System.out.println("계좌 " + this.accountNum + " (예금주: " + this.accountHolder + ")");
 		System.out.println("잔액: " + this.balance + "원");
 	}
@@ -55,7 +55,7 @@ public class Account {
 	
 	public static void main(String[] args) {
 		Account test = new Account("홍길동", "123-456789", 10000); // instance 생성
-		test.AccoutInfo();
+		test.AccountInfo();
 		test.deposit(20000);
 		test.withdraw(45000);	
 	}
