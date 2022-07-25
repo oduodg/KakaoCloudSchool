@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<div>아래는 form 태그에요!!</div>
+	<!-- action: 입력된 내용을 가지고 요청을 보낼 서버쪽 프로그램에 대한 URL -->
+	<!-- method: 생략가능. 만약 생략되면 "GET"
+				 클라이언트가 서버에 Request를 보내는 방법을 지정한다.
+				 총 6개 존재하는데 4개(REST)만 사용한다.
+				 REST를 사용하지 않는다면 일반적으로는 2개(GET, POST)만 이용한다.
+				 "GET", "POST", "PUT", "DELETE"  -->
+	<form action="index.html" method="GET"> <!-- action은 상대경로로 작성하자 -->
+	<!-- <form action="http://localhost:8080/html/index.html" method="GET"> 
+	절대경로로 쓰는 것은 지양한다. context root가 변경되는 경우 바꿔주어야하기 때문 -->
+		ID : <input type="text" name="userID">
+		PW : <input type="text" name="userPW">
+		<input type="submit" value="서버로 데이터 전송">
+	</form>
+</body>
+</html>
