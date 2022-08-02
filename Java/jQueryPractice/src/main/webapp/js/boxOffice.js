@@ -109,13 +109,15 @@ function getData() {
 				deleteTd.attr('valign', 'middle');
 				let deleteBtn = $("<button></button>").text("delete");
 				deleteBtn.attr('type', 'button');
-				deleteBtn.addClass("btn btn-outline-danger");
+				deleteBtn.addClass("btn btn-danger");
+				deleteBtn.click(function() {
+					$(this).closest('tr').remove();
+				});
 				deleteTd.append(deleteBtn);
 				tr.append(deleteTd);
-
+				
 				$('tbody').attr('vertical-align', 'center');
 				$('tbody').append(tr); // tbody에 tr 붙이기
-					
 			}
 			
 		},
@@ -124,5 +126,4 @@ function getData() {
 			alert('먼가 이상해요!!');
 		}
 	});
-
 }
