@@ -27,7 +27,7 @@ export default function Form({ todoData, setTodoData, value, setValue }) {
     <form onSubmit={handleSubmit} className="flex pt-2">
         <input type="text"
                name='todoItem'
-               placeholder='새로운 할일을 입력하세요'
+               placeholder='새로운 할 일을 입력하세요'
                className='w-full px-3 py-2 mr-4 text-gray-500 border rounded shadow'
                value={value}
                onChange={handleChange}
