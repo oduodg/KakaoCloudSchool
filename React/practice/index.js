@@ -26,3 +26,30 @@ const result = words.filter((word) => {
 })
 
 console.log(result); // [ '세종대왕', '샤인머스캣', '소리없는 아우성' ]
+
+
+// 전개 연산자 (Spread Operator) => ...
+let arr1 = [1, 2, 3]
+let arr2 = [4, 5, 6]
+let arr3 = [7, 8, 9]
+
+let res = arr1.concat(arr2, arr3);
+console.log(res); //[1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+let res2 = [...arr1, ...arr2, ...arr3]
+console.log(res2); //[1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+let obj1 = {
+  a: '1',
+  b: '2'
+}
+
+let obj2 = {
+  c: '3',
+  d: '4'
+}
+
+res3 = { obj1, obj2 }
+console.log(res3); //{ obj1: { a: '1', b: '2' }, obj2: { c: '3', d: '4' } }
+res4 = { ...obj1, ...obj2 }
+console.log(res4); //{ a: '1', b: '2', c: '3', d: '4' }
