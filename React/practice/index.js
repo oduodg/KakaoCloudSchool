@@ -53,3 +53,21 @@ res3 = { obj1, obj2 }
 console.log(res3); //{ obj1: { a: '1', b: '2' }, obj2: { c: '3', d: '4' } }
 res4 = { ...obj1, ...obj2 }
 console.log(res4); //{ a: '1', b: '2', c: '3', d: '4' }
+
+
+/* 구조분해 할당(ES6, Destructuring) */
+// 이 방식을 사용하는 이유는.. 코드가 간결해지기 때문에
+// 객체나 배열의 속성을 분해해서 개별 변수에 담을 수 있게 해줘요!
+
+let obj = {
+  name: '홍길동',
+  age: 20,
+  address: '서울'
+}
+
+//let {name, age, address} = obj;
+let {address: {zipcode, city}} = obj;
+//zipcode, city
+
+let a, b;
+[a, b] = [10, 20];
