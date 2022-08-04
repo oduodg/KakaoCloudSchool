@@ -10,7 +10,8 @@ export default function App() {
     {
       id: "1",
       title: "운동하기",
-      completed: false
+      completed: false,
+      edited: false
     },
   ]
   );
@@ -19,6 +20,7 @@ export default function App() {
 
   /* 삭제하기 */
   const deleteClick = useCallback((id) => {
+    console.log("delete");
     const newTodoData = todoData.filter(data => data.id !== id);
     setTodoData(newTodoData);
   }, [todoData]);
@@ -30,7 +32,7 @@ export default function App() {
           <h1 className="text-2xl">오늘 할 일</h1>
         </div>
 
-        <Lists 
+        <Lists
         deleteClick={deleteClick}
         todoData={todoData} 
         setTodoData={setTodoData} />

@@ -41,7 +41,8 @@ const Lists = React.memo(({ deleteClick, todoData, setTodoData }) => {
 													todoData={todoData}
 													setTodoData={setTodoData}
 													provided={provided}
-													snapshot={snapshot} />
+													snapshot={snapshot}
+													edited={data.edited}/>
 									)}
 								</Draggable>
 							))}
