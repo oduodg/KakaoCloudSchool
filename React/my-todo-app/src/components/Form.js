@@ -1,7 +1,7 @@
 import React from 'react'
 
 export default function Form({ todoData, setTodoData, value, setValue }) {
-
+	console.log("Form component 실행!");
 	/* 새로운 할 일 입력 */
 	const handleChange = (e) => {
 		setValue(e.target.value);
