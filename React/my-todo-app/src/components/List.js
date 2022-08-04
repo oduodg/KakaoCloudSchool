@@ -5,8 +5,19 @@ const List = ({ deleteClick, id, title, completed, todoData, setTodoData, provid
 
 	const [newText, setNewTest] = useState({ title })
 
+	/* 수정 취소하기 */
+	function onClickBack(id){
+		let newTodoData = todoData.map((data) => {
+			if (data.id === id) {
+				data.edited = !data.edited;
+			}
+			return data;
+		});
+		setTodoData(newTodoData);
+	}
+
 	/* 수정하기 */
-	const editClick = (id) => {
+	const onClickEdit = (id) => {
 		let newTodoData = todoData.map((data) => {
 			if (data.id === id) {
 				data.edited = !data.edited;
@@ -71,10 +82,11 @@ const List = ({ deleteClick, id, title, completed, todoData, setTodoData, provid
 				<div className='items-center'>
 					{edited ? <button type="submit" onClick={() => onClickSaveButton(id)}>save</button>
 						: completed ? <></>
-							: <button onClick={() => editClick(id)}>edit</button>}
-
-					<button className='ml-4'
-						onClick={() => deleteClick(id)}>delete</button>
+							: <button onClick={() => onClickEdit(id)}>edit</button>}
+					{edited ? <button className='ml-4'
+						onClick={() => onClickBack(id)}>back</button>
+									: <button className='ml-4'
+									onClick={() => deleteClick(id)}>delete</button>}
 				</div>
 			</div>
 		</div>
